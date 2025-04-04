@@ -77,7 +77,6 @@ h2::after {
     background-color: #2ecc71;
     border-radius: 2px;
     transform: translateY(-10px);
-    /* transform: translateX(10px); */
     margin-top: 10px;
 }
 
@@ -85,7 +84,7 @@ h2::after {
     width: 100%;
     padding: 0.5rem 1rem;
     outline: none;
-    border: 2px solid #2ecc71;
+    border: 2px solid var(--border-color);
     background-color: rgba(255, 255, 255, 0.8);
     font-size: 1.1rem;
     margin-bottom: 20px;
@@ -94,7 +93,7 @@ h2::after {
 }
 
 .input-here:hover {
-    background-color: #241168;
+    background-color: rgba(255, 255, 255, 0.8);
 
 }
 
@@ -114,7 +113,7 @@ h2::after {
 .button {
     width: 100%;
     padding: 0.5rem 1rem;
-    background-color: #2ecc71;
+    background-color:var(--button-color);
     color: white;
     font-size: 1.1rem;
     border: none;
