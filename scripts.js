@@ -1,4 +1,4 @@
-
+// Hamburger Menu
 const hamburger = document.querySelector('.hamburger');
 const navLinks = document.querySelector('.nav-links');
 
@@ -6,76 +6,66 @@ hamburger.addEventListener('click', () => {
     navLinks.classList.toggle('show');
 });
 
+// Typing Effect (unchanged)
 const titles = ["Graphic Designer", "Software Engineer"];
-let index = 0; // Index of the current title
-let charIndex = 0; // Index of the current character in the title
-let isDeleting = false; // Whether the text is being deleted
-const typingSpeed = 100; // Typing speed in milliseconds
-const deletingSpeed = 50; // Deleting speed in milliseconds
-const delayBetweenTitles = 1000; // Delay before switching to the next title
-
+let index = 0;
+let charIndex = 0;
+let isDeleting = false;
+const typingSpeed = 100;
+const deletingSpeed = 50;
+const delayBetweenTitles = 1000;
 const animatedText = document.getElementById("animated-text");
 
 function typeEffect() {
-const currentTitle = titles[index];
-if (isDeleting) {
-// Remove characters
-animatedText.textContent = currentTitle.substring(0, charIndex--);
-} else {
-// Add characters
-animatedText.textContent = currentTitle.substring(0, charIndex++);
+    const currentTitle = titles[index];
+    animatedText.textContent = currentTitle.substring(0, charIndex);
+    
+    if (!isDeleting && charIndex === currentTitle.length) {
+        setTimeout(() => isDeleting = true, delayBetweenTitles);
+    } else if (isDeleting && charIndex === 0) {
+        isDeleting = false;
+        index = (index + 1) % titles.length;
+    }
+
+    charIndex = isDeleting ? charIndex - 1 : charIndex + 1;
+    setTimeout(typeEffect, isDeleting ? deletingSpeed : typingSpeed);
 }
 
-// Determine the next step
-if (!isDeleting && charIndex === currentTitle.length) {
-// Pause at the end of the word
-setTimeout(() => (isDeleting = true), delayBetweenTitles);
-} else if (isDeleting && charIndex === 0) {
-// Move to the next title
-isDeleting = false;
-index = (index + 1) % titles.length; // Cycle through titles
-}
+// Modal Functionality
+document.addEventListener('DOMContentLoaded', () => {
+    const modal = document.getElementById('modal-container');
+    const triggers = document.querySelectorAll('[data-modal]');
+    const closers = document.querySelectorAll('[data-close-modal]');
 
-// Adjust speed based on typing or deleting
-const speed = isDeleting ? deletingSpeed : typingSpeed;
-setTimeout(typeEffect, speed);
-}
-
-// Start the typing effect
-typeEffect();
-document.addEventListener('DOMContentLoaded', function() {
-    // Get modal elements
-    const modalContainer = document.getElementById('modal-container');
-    const closeModalBtn = document.getElementById('close-modal');
-    const readMoreBtn = document.getElementById('read-more-btn');
-
-
-    // Open modal when "Read More" is clicked
-    readMoreBtn.addEventListener('click', function(e) {
-        e.preventDefault(); // Prevent default link behavior
-        modalContainer.classList.add('active');
-        document.body.style.overflow = 'hidden'; // Prevent background scrolling
+    // Open modal
+    document.querySelector('a[href="#modal-container"]').addEventListener('click', (e) => {
+        e.preventDefault();
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
     });
 
-    // Close modal when close button is clicked
-    closeModalBtn.addEventListener('click', function() {
-        modalContainer.classList.remove('active');
-        document.body.style.overflow = 'auto'; // Restore scrolling
+    // Close modal
+    document.getElementById('close-modal').addEventListener('click', () => {
+        modal.classList.remove('active');
+        document.body.style.overflow = 'auto';
     });
 
-    // Close modal when clicking outside
-    modalContainer.addEventListener('click', function(e) {
-        if (e.target === modalContainer) {
-            modalContainer.classList.remove('active');
+    // Close on overlay click
+    modal.addEventListener('click', (e) => {
+        if (e.target === modal) {
+            modal.classList.remove('active');
             document.body.style.overflow = 'auto';
         }
     });
 
-    // Close modal with Escape key
-    document.addEventListener('keydown', function(e) {
-        if (e.key === 'Escape' && modalContainer.classList.contains('active')) {
-            modalContainer.classList.remove('active');
+    // Close on ESC
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && modal.classList.contains('active')) {
+            modal.classList.remove('active');
             document.body.style.overflow = 'auto';
         }
     });
 });
+
+// Start typing effect
+typeEffect();
