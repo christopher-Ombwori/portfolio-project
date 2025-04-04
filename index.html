@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My portfolio</title>
     <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"> <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
     
 </head>
 <body>
@@ -21,7 +21,7 @@
                 </button>
                 <ul class="nav-links">
                     <li><a href="#">Home</a></li>
-                    <li><a href="#about">About</a></li>
+                    <li><a href="#brief">About</a></li>
                     <li><a href="#projects">Projects</a></li>
                     <li><a href="contact.html">Contact</a></li>
                 </ul>
@@ -37,46 +37,155 @@
             <a href="#contact" class="btn">Contact Me</a>
         </div>
         <div class="graphic">
-            <img src="graphic-image.jpeg" alt="Graphic Design">
+            <img src="images/graphic-image.jpeg" alt="Graphic Design">
         </div>
     </section>
-    <section class="hero">
+    <section class="hero" id="brief">
         <div class="hero-container">
             <div class="hero-image">
-                <img src="me.jpeg" alt="Hero Image">
+                <img src="images/me.jpeg" alt="Hero Image">
             </div>
             <div class="hero-content">
                 <h1>I am Christopher Ombwori</h1>
                 <p>A Graphic Designer and Software Developer</p>
                 <p>I love creating visually appealing designs and writing clean, efficient code. With expertise in design tools and programming languages, I bring ideas to life through creativity and technology.</p>
                 <a href="cv.pdf" class="btn download-btn" download>Download my CV</a>
+                 <a href="#modal">Read More</a>
             </div>
         </div>
+        <section class="modal-container" id="modal-container">
+            <div class="modal">
+                <div class="modal-header">
+                    <h2>Get to know me</h2>
+                    <button class="close-modal" id="close-modal">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <p>
+                        I’m Chris, a graphic designer and programmer with a focus on pushing boundaries and solving complex challenges. From a young age, I’ve been fascinated by how design and technology can come together to change the way people experience the digital world. My passion lies in crafting aesthetically pleasing, user-centered designs that don’t just look good but also function seamlessly.
+                    </p>
+                    <p>
+                        I am driven by the challenge of transforming ideas into visual art that not only tells a story but As a programmer, I constantly seek to write clean, efficient code that supports robust solutions. Combining creativity with technical skills, I aim to create designs and systems that not only meet the needs of clients but also leave a lasting impact.also resonates with the audience. What excites me the most is working on projects that require both technical skills and artistic vision, like combining clean code with pixel-perfect designs.
+                    </p>
+                    <p>
+                        I'm constantly evolving, learning new skills, and staying on toMy journey is driven by a deep desire to help others through my work, whether it’s designing intuitive interfaces or developing functional web applications. With every project, I strive for constant improvement, aiming to bring fresh perspectives and cutting-edge designs to lifep of design trends. My mission is to make digital experiences more intuitive, creative, and impactful—one pixel at a time.
+                    </p>
+                </div>
+            </div>
+        </section>
     </section>
-    
+    <section class="interests-section">
+        <h2>Interests</h2>
+        <ul class="interests-list">
+            <li><span class="interest-item">Hiking</span></li>
+            <li><span class="interest-item">Coding</span></li>
+            <li><span class="interest-item">Photography</span></li>
+            <li><span class="interest-item">Music</span></li>
+        </ul>
+    </section>
     <section class="skills">
         <h2>Skill Set</h2>
         <div class="skills-container">
             <div class="skill-box">
-                <h3>Design Softwares</h3>
-                <ul>
-                    <li>Photoshop</li>
-                    <li>Adobe Illustrator</li>
-                    <li>Figma</li>
-                    <li>Canva</li>
-                </ul>
+                <h3>Design Skills</h3>
+                <div class="skill-item">
+                    <div class="skill-info">
+                        <p>Photoshop</p>
+                        <p>90%</p>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 90%"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-info">
+                        <p>Illustrator</p>
+                        <p>85%</p>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 85%"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-info">
+                        <p>Figma</p>
+                        <p>95%</p>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 95%"></div>
+                    </div>
+                </div>
             </div>
+            
+    
             <div class="skill-box">
-                <h3>Programming Languages</h3>
-                <ul>
-                    <li>CSS</li>
-                    <li>JavaScript</li>
-                    <li>Python</li>
-                    <li>SQL</li>
-                </ul>
+                <h3>Development Skills</h3>
+                <div class="skill-item">
+                    <div class="skill-info">
+                        <p>HTML/CSS</p>
+                        <p>87%</p>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 87%"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-info">
+                        <p>JavaScript</p>
+                        <p>75%</p>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 75%"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-info">
+                        <p>Python</p>
+                        <p>80%</p>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 80%"></div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
+
+
+    <section class="education-section">
+        <h2>Education & Certifications</h2>
+        <div class="education-container">
+            <!-- High School -->
+            <div class="education-card">
+                <h3>High School Diploma</h3>
+                <p><strong>Cardinal Otunga High School</strong>, 2020 - 2024</p>
+                <p><em>Focus:</em> General education with a special emphasis on leadership, teamwork, and analytical thinking.</p>
+            </div>
+            
+            <!-- Certifications -->
+            <div class="certifications">
+                <h3>Certifications</h3>
+                <div class="certification-card">
+                    <h4>AI Fundamentals, ALX</h4>
+                    <p><strong>2024</strong></p>
+                    <p><em>Key Learnings:</em> Introduction to artificial intelligence concepts, machine learning, neural networks, and data science principles.</p>
+                </div>
+                
+                <div class="certification-card">
+                    <h4>DEXA Project Management, ALX</h4>
+                    <p><strong>2024</strong></p>
+                    <p><em>Key Learnings:</em> Fundamentals of project management, including planning, execution, risk management, and team collaboration.</p>
+                </div>
+                
+                <div class="certification-card">
+                    <h4>FreeCodeCamp Tutorials</h4>
+                    <p><strong>YouTube, 2024</strong></p>
+                    <p><em>Key Learnings:</em> Hands-on coding experience with HTML, CSS, JavaScript, and front-end development concepts.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    
     
     <section class="services">
         <h2>Services</h2>
@@ -85,38 +194,101 @@
                 <div class="service-icon">🎨</div>
                 <h3>Graphic Design</h3>
                 <p>Custom graphic design solutions tailored to your brand's unique identity and requirements.</p>
-                <a href="#" class="learn-more">Learn More</a>
             </div>
             
             <div class="service-card">
                 <div class="service-icon">💻</div>
                 <h3>Web Development</h3>
                 <p>Modern, responsive websites built with the latest technologies for optimal performance.</p>
-                <a href="#" class="learn-more">Learn More</a>
             </div>
             
             <div class="service-card">
                 <div class="service-icon">📱</div>
                 <h3>UI/UX Design</h3>
                 <p>User-centered design solutions that enhance user experience and drive engagement.</p>
-                <a href="#" class="learn-more">Learn More</a>
             </div>
         </div>
     </section>
     
-    <section class="projects">
-        <h2>Projects</h2>
+    <section class="projects" id="projects">
+        <h2>Recent Projects</h2>
         <div class="projects-container">
-            <div class="project-card">Project 1</div>
-            <div class="project-card">Project 2</div>
-            <div class="project-card">Project 3</div>
-            <div class="project-card">Project 4</div>
+            <div class="project-card">
+                <div class="project-image">
+                    <img src="images/project 2.png" alt="Project 1">
+                </div>
+                <div class="project-content">
+                    <h3>Brand Identity Design</h3>
+                    <p>A comprehensive branding project including logo, color palette, and brand guidelines.</p>
+                    <a href="https://www.behance.net/yourprofile" class="project-link" target="_blank">
+                        View on Behance <i class="fab fa-behance"></i>
+                    </a>
+                </div>
+            </div>
+    
+            <div class="project-card">
+                <div class="project-image">
+                    <img src="images/project 1.jpg" alt="Project 2">
+                </div>
+                <div class="project-content">
+                    <h3>Photo Editing</h3>
+                    <p>Mobile app interface design with focus on user experience and modern aesthetics.</p>
+                    <a href="https://www.behance.net/yourprofile" class="project-link" target="_blank">
+                        View on Behance <i class="fab fa-behance"></i>
+                    </a>
+                </div>
+            </div>
+    
+            <div class="project-card">
+                <div class="project-image">
+                    <img src="images/project 3.png" alt="Project 3">
+                </div>
+                <div class="project-content">
+                    <h3>Poster Design</h3>
+                    <p>Modern and responsive website design for a tech startup.</p>
+                    <a href="https://www.behance.net/yourprofile" class="project-link" target="_blank">
+                        View on Behance <i class="fab fa-behance"></i>
+                    </a>
+                </div>
+            </div>
         </div>
     </section>
     
-    <section class="footer">
-        <a href="#about" class="btn footer-btn">More about me</a>
-        <a href="#contact" class="btn footer-btn">Contact Me</a>
+    <section class="call-to-action">
+        <h2>Ready to work together?</h2>
+        <a href="contact.html" class="btn">Contact Me</a>
+    </section>
+
+    <section>
+        <footer class="footer">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Chris</h3>
+                    <p>Bringing creativity and technology together to create amazing digital experiences.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#projects">Projects</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Connect</h3>
+                    <div class="social-links">
+                        <a href="#" target="_blank"><i class="fab fa-github"></i></a>
+                        <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+                        <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Chris. All rights reserved.</p>
+            </div>
+        </footer>
     </section>
    
     <script src="scripts.js"></script>

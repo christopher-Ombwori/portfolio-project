@@ -43,4 +43,39 @@ setTimeout(typeEffect, speed);
 
 // Start the typing effect
 typeEffect();
+document.addEventListener('DOMContentLoaded', function() {
+    // Get modal elements
+    const modalContainer = document.getElementById('modal-container');
+    const closeModalBtn = document.getElementById('close-modal');
+    const readMoreBtn = document.getElementById('read-more-btn');
 
+
+    // Open modal when "Read More" is clicked
+    readMoreBtn.addEventListener('click', function(e) {
+        e.preventDefault(); // Prevent default link behavior
+        modalContainer.classList.add('active');
+        document.body.style.overflow = 'hidden'; // Prevent background scrolling
+    });
+
+    // Close modal when close button is clicked
+    closeModalBtn.addEventListener('click', function() {
+        modalContainer.classList.remove('active');
+        document.body.style.overflow = 'auto'; // Restore scrolling
+    });
+
+    // Close modal when clicking outside
+    modalContainer.addEventListener('click', function(e) {
+        if (e.target === modalContainer) {
+            modalContainer.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+    });
+
+    // Close modal with Escape key
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && modalContainer.classList.contains('active')) {
+            modalContainer.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+    });
+});
